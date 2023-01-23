@@ -24,10 +24,12 @@ default: &default
 development:
   <<: *default
   database: melody_rentals_development
-  username: <%= ENV["DB_USERNAME"] %>
-  password: <%= ENV["MELODY_RENTALS_DB_PASSWORD"] %>
-  host: localhost
+  host : localhost
   port: 5432
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: postgres
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -62,10 +64,12 @@ development:
 test:
   <<: *default
   database: melody_rentals_test
-  username: <%= ENV["DB_USERNAME"] %>
-  password: <%= ENV["MELODY_RENTALS_DB_PASSWORD"] %>
-  host: localhost
+  host : localhost
   port: 5432
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: postgres
 
   # username: ENV['DB_USERNAME']
   # password: ENV['MELODY_RENTALS_DB_PASSWORD']
