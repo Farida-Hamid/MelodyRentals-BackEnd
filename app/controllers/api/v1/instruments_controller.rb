@@ -1,22 +1,24 @@
 module Api
   module V1
     class InstrumentsController < ApplicationController
-        before_action :set_instrument, only: [:show, :update, :destroy]
+        before_action :set_instrument, only: [:show]
+        before_action :authenticate_user!, only: [:create, :update, :destroy]
 
         # GET /instruments
         def index
             @instruments = Instrument.all
     
-            render json: @instruments
+            render json: @instruments, status: :ok
         end
 
         # GET /instruments/1
         def show
-            render json: @instrument
+            render json: @instrument, status: :ok
         end
 
         # POST /instruments
         def create
+            return render json: { error: 'You do not have authorization' }, status: :unauthorized unless current_user.role == 'admin'
             @instrument = Instrument.new(instrument_params)
     
             if @instrument.save
@@ -28,6 +30,7 @@ module Api
 
         # PATCH/PUT /instruments/1
         def update
+            return render json: { error: 'You do not have authorization' }, status: :unauthorized unless current_user.role == 'admin'
             if @instrument.update(instrument_params)
                 render json: @instrument
             else
@@ -37,6 +40,7 @@ module Api
 
         # DELETE /instruments/1
         def destroy
+            return render json: { error: 'You do not have authorization' }, status: :unauthorized unless current_user.role == 'admin'
             @instrument.destroy
         end
 
@@ -45,11 +49,15 @@ module Api
         # Use callbacks to share common setup or constraints between actions.
         def set_instrument
             @instrument = Instrument.find(params[:id])
+        rescue ActiveRecord::RecordNotFound
+            render json: { errors: 'Instrument not found' }, status: :not_found
         end
 
         # Only allow a trusted parameter "white list" through.
         def instrument_params
-            params.require(:instrument).permit(:name, :description, :image, :price, :quantity, :category)
+            params.require(:instrument).permit(
+                :name, :description, :image, :price, :quantity, :category
+            )
         end
     end
   end

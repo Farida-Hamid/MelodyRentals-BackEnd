@@ -83,14 +83,13 @@ This is the api for our Melody rentals application
 ## Key features : <a name="key-features"></a>
 
 - Create an account
-- All users and their posts can be displayed
-- Create a post
-- Edit a post
-- Delete a post
+- All available musical instruments will be displayed
+- Reserve an instrument
 
 
 ## ERD diagram
-![blog_app_erd](https://user-images.githubusercontent.com/79658534/196410864-c9e7bf4f-1bc1-4aa2-8d46-764b4447bfe9.png)
+
+<img src="./booking-app.png" height="500" width="750" alt="erd diagram" />
 
 ## Deployment <a name="triangular_flag_on_post-deployment"></a>
 
