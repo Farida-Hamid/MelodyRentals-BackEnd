@@ -9,6 +9,8 @@
 
 node_modules/
 
+sumn.rb
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
