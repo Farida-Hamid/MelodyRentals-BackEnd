@@ -2,17 +2,16 @@ module Api
   module V1
     class UsersController < ApplicationController
       before_action :authorize_request, except: :create
-      before_action :find_user, except: %i[create index]
 
-      # GET /users
       def index
         @users = User.all
-        render json: @users, status: :ok
+        render json: { users: UserSerializer.new(@users).serializable_hash[:data].map { |h| h[:attributes] } }, status: :ok
       end
-
+    
       # GET /users/{username}
       def show
-        render json: @user, status: :ok
+        @user = User.find(params[:id])
+        render json: { user: UserSerializer.new(@user).serializable_hash[:data][:attributes] }, status: :ok
       end
 
       # POST /users
@@ -41,12 +40,6 @@ module Api
 
       private
 
-      def find_user
-        @user = User.find_by_username!(params[:_username])
-      rescue ActiveRecord::RecordNotFound
-        render json: { errors: 'User not found' }, status: :not_found
-      end
-
       def user_params
         params.permit(
           :name, :username, :email, :password, :password_confirmation
@@ -55,3 +48,9 @@ module Api
     end
   end
 end
+
+# change api spacing
+# remove instance variables
+# use rescue
+# find_bt(email: params[:email])
+# params.require(authentication).permit(:email, :password)

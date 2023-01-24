@@ -9,6 +9,12 @@ gem 'rails', '~> 7.0.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 
+# serializer
+gem 'jsonapi-serializer'
+
+# Use Pundit for authorization
+gem 'pundit'
+
 # Use Json Web Token (JWT) for token based authentication
 gem 'jwt'
 
