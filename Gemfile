@@ -18,6 +18,9 @@ gem 'pundit'
 # Use Json Web Token (JWT) for token based authentication
 gem 'jwt'
 
+# rack-cors for Cross-Origin Resource Sharing (CORS)
+gem 'rack-cors'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 

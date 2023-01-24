@@ -1,48 +1,48 @@
-class Api::V1:class UsersController < ApplicationController
-      before_action :authorize_request, except: :create
+class Api::V1::UsersController < ApplicationController
+  before_action :authorize_request, except: :create
 
-      def index
-        @users = User.all
-        render json: { users: UserSerializer.new(@users).serializable_hash[:data].map { |h| h[:attributes] } }, status: :ok
-      end
-    
-      # GET /users/user_id
-      def show
-        @user = User.find(params[:id])
-        render json: { user: UserSerializer.new(@user).serializable_hash[:data][:attributes] }, status: :ok
-      end
+  def index
+    @users = User.all
+    render json: { users: UserSerializer.new(@users).serializable_hash[:data].map { |h| h[:attributes] } }, status: :ok
+  end
 
-      # POST /users
-      def create
-        @user = User.new(user_params)
-        if @user.save
-          render json: @user, status: :created
-        else
-          render json: { errors: @user.errors.full_messages },
-                 status: :unprocessable_entity
-        end
-      end
+  # GET /users/user_id
+  def show
+    @user = User.find(params[:id])
+    render json: { user: UserSerializer.new(@user).serializable_hash[:data][:attributes] }, status: :ok
+  end
 
-      # PUT /users/{username}
-      def update
-        return if @user.update(user_params)
+  # POST /users
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      render json: @user, status: :created
+    else
+      render json: { errors: @user.errors.full_messages },
+             status: :unprocessable_entity
+    end
+  end
 
-        render json: { errors: @user.errors.full_messages },
-               status: :unprocessable_entity
-      end
+  # PUT /users/{username}
+  def update
+    return if @user.update(user_params)
 
-      # DELETE /users/{username}
-      def destroy
-        @user.destroy
-      end
+    render json: { errors: @user.errors.full_messages },
+           status: :unprocessable_entity
+  end
 
-      private
+  # DELETE /users/{username}
+  def destroy
+    @user.destroy
+  end
 
-      def user_params
-        params.permit(
-          :name, :username, :email, :password, :password_confirmation
-        )
-      end
+  private
+
+  def user_params
+    params.permit(
+      :name, :username, :email, :password, :password_confirmation
+    )
+  end
 end
 
 # change api spacing
