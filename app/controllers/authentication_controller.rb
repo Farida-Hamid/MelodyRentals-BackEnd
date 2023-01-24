@@ -3,12 +3,11 @@ class AuthenticationController < ApplicationController
 
   # POST /auth/login
   def login
-    user = User.find_by_email(params[:email])
-    if user&.authenticate(params[:password])
-      token = jwt_encode(user_id: user.id)
+    @user = User.find_by_email(params[:email])
+    if @user&.authenticate(params[:password])
+      token = jwt_encode(user_id: @user.id)
       time = Time.now + 7.days.to_i
-      render json: { token:, exp: time.strftime('%m-%d-%Y %H:%M'),
-                     username: user.username }, status: :ok
+      render json: { token: token, exp: time.strftime('%m-%d-%Y %H:%M') }, status: :ok
     else
       render json: { error: 'unauthorized' }, status: :unauthorized
     end
@@ -17,6 +16,6 @@ class AuthenticationController < ApplicationController
   private
 
   def login_params
-    params.require(:authentication).permit(:email, :password)
+    params.permit(:email, :password)
   end
 end

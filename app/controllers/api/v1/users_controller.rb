@@ -8,7 +8,7 @@ module Api
         render json: { users: UserSerializer.new(@users).serializable_hash[:data].map { |h| h[:attributes] } }, status: :ok
       end
     
-      # GET /users/{username}
+      # GET /users/user_id
       def show
         @user = User.find(params[:id])
         render json: { user: UserSerializer.new(@user).serializable_hash[:data][:attributes] }, status: :ok
