@@ -1,6 +1,4 @@
-module Api
-  module V1
-    class InstrumentsController < ApplicationController
+class Api::V1:class InstrumentsController < ApplicationController
       before_action :set_instrument, only: [:show]
       before_action :authenticate_user!, except: %i[index show]
 
@@ -68,6 +66,4 @@ module Api
           :name, :description, :image, :price, :quantity, :category
         )
       end
-    end
-  end
 end

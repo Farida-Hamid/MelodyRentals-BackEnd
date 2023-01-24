@@ -1,6 +1,4 @@
-module Api
-  module V1
-    class UsersController < ApplicationController
+class Api::V1:class UsersController < ApplicationController
       before_action :authorize_request, except: :create
 
       def index
@@ -45,8 +43,6 @@ module Api
           :name, :username, :email, :password, :password_confirmation
         )
       end
-    end
-  end
 end
 
 # change api spacing
