@@ -25,12 +25,12 @@ default: &default
 development:
   <<: *default
   database: melody_rentals_development
+  host : localhost
+  port: 5432
   adapter: postgresql
   encoding: unicode
-  username: <%= ENV["DB_USERNAME"] %>
-  password: <%= ENV["MELODY_RENTALS_DB_PASSWORD"] %>
-  host: localhost
-  port: 5432
+  username: postgres
+  password: postgres
   # username: postgres
   # password: postgres
 
@@ -67,12 +67,12 @@ development:
 test:
   <<: *default
   database: melody_rentals_test
+  host : localhost
+  port: 5432
   adapter: postgresql
   encoding: unicode
-  username: <%= ENV["DB_USERNAME"] %>
-  password: <%= ENV["MELODY_RENTALS_DB_PASSWORD"] %>
-  host: localhost
-  port: 5432
+  username: postgres
+  password: postgres
   # username: postgres
   # password: postgres
 
