@@ -18,6 +18,6 @@ class User < ApplicationRecord
   def regular?
     role == 'regular'
   end
- 
+
   has_many :reservations, dependent: :destroy
 end
