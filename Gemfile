@@ -10,13 +10,23 @@ gem 'rails', '~> 7.0.4'
 gem 'pg', '~> 1.1'
 
 # serializer
-gem 'jsonapi-serializer'
+gem "jsonapi-serializer", "~> 2.2"
 
 # Use Pundit for authorization
-gem 'pundit'
+gem "pundit", "~> 2.3"
 
 # Use Json Web Token (JWT) for token based authentication
 gem 'jwt'
+
+gem "faker", "~> 3.1"
+
+gem "factory_bot_rails", "~> 6.2"
+
+gem "ransack", "~> 3.2"
+
+gem "devise", "~> 4.8"
+
+gem "devise-jwt", "~> 0.10.0"
 
 # rack-cors for Cross-Origin Resource Sharing (CORS)
 gem 'rack-cors'

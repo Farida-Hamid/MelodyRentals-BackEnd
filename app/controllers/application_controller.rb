@@ -7,7 +7,7 @@ class ApplicationController < ActionController::API
 
   def authorize_request
     header = request.headers['Authorization']
-    header = header.split.call(' ').last if header
+    header = header.split.last if header
     begin
       decoded = jwt_decode(header)
 
