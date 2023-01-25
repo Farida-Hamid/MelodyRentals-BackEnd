@@ -9,5 +9,6 @@ class User < ApplicationRecord
             length: { minimum: 6 },
             if: -> { new_record? || !password.nil? }
 
-  has_many :instruments, dependent: :destroy, foreign_key: :user_id
+  has_many :instruments, through: :reservations, dependent: :destroy
+  has_many :reservations, dependent: :destroy
 end

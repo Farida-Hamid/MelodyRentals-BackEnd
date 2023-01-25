@@ -28,6 +28,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_23_132227) do
   end
 
   create_table "reservations", force: :cascade do |t|
+    t.datetime "pickup_date"
+    t.datetime "return_date"
     t.bigint "user_id", null: false
     t.bigint "instrument_id", null: false
     t.datetime "created_at", null: false
