@@ -8,5 +8,5 @@ class Instrument < ApplicationRecord
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :category, presence: true, length: { maximum: 50 }
-  validates :image, presence: true, length: { maximum: 500 }, uniqueness: true
+  validates :image, presence: true, length: { maximum: 500 }
 end

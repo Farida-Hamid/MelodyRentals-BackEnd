@@ -1,4 +1,4 @@
 class InstrumentSerializer
   include JSONAPI::Serializer
-  attributes :name, :description, :price, :image, :category, :quantity
+  attributes :id, :name, :description, :price, :quantity, :category, :image
 end
