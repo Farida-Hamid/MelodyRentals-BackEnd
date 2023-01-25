@@ -20,14 +20,14 @@ class ApplicationController < ActionController::API
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email, :name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[username email name])
   end
 
   def user_not_authorized
-    render json: { error: "You are not authorized to perform this action" }, status: :unauthorized
+    render json: { error: 'You are not authorized to perform this action' }, status: :unauthorized
   end
 
   def record_not_found
-    render json: { error: "Record not found" }, status: :not_found
+    render json: { error: 'Record not found' }, status: :not_found
   end
 end

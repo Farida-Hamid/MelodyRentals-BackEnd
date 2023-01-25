@@ -10,29 +10,27 @@ gem 'rails', '~> 7.0.4'
 gem 'pg', '~> 1.1'
 
 # serializer
-gem "jsonapi-serializer", "~> 2.2"
+gem 'jsonapi-serializer', '~> 2.2'
 
 # Use Pundit for authorization
-gem "pundit", "~> 2.3"
+gem 'pundit', '~> 2.3'
 
 # Use Json Web Token (JWT) for token based authentication
 gem 'jwt'
 
-gem "faker", "~> 3.1"
+gem 'faker', '~> 3.1'
 
-gem "factory_bot_rails", "~> 6.2"
+gem 'ransack', '~> 3.2'
 
-gem "ransack", "~> 3.2"
+gem 'devise', '~> 4.8'
 
-gem "devise", "~> 4.8"
-
-gem "devise-jwt", "~> 0.10.0"
+gem 'devise-jwt', '~> 0.10.0'
 
 # rack-cors for Cross-Origin Resource Sharing (CORS)
 gem 'rack-cors'
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+# gem 'bcrypt', '~> 3.1.7'
 
 # figaro for environment variables
 gem 'figaro'
@@ -69,6 +67,7 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
 end
 
 group :development do

@@ -11,7 +11,7 @@ class UserSerializer
         price: instrument.price,
         quantity: instrument.quantity,
         category: instrument.category,
-        image: instrument.image,
+        image: instrument.image
       }
     end
   end

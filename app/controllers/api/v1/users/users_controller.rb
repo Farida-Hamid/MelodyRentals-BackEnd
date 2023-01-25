@@ -4,7 +4,7 @@ class Api::V1::Users::UsersController < ApplicationController
 
   def index
     @q = User.ransack(params[:q])
-    @q.sorts = "created_at desc" if @q.sorts.empty?
+    @q.sorts = 'created_at desc' if @q.sorts.empty?
     @users = policy_scope @q.result.includes(:instruments)
     respond_to do |format|
       format.json { render json: UserSerializer.new(@users).serializable_hash[:data].map { |user| user[:attributes] } }
