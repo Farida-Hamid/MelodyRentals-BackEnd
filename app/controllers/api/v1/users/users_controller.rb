@@ -1,39 +1,28 @@
-class Api::V1::UsersController < ApplicationController
-  before_action :authorize_request, except: :create
+class Api::V1::Users::UsersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_user, only: %i[show update]
 
   def index
-    @users = User.all
-    render json: { users: UserSerializer.new(@users).serializable_hash[:data].map { |h| h[:attributes] } }, status: :ok
-  end
-
-  # GET /users/user_id
-  def show
-    @user = User.find(params[:id])
-    render json: { user: UserSerializer.new(@user).serializable_hash[:data][:attributes] }, status: :ok
-  end
-
-  # POST /users
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      render json: @user, status: :created
-    else
-      render json: { errors: @user.errors.full_messages },
-             status: :unprocessable_entity
+    @q = User.ransack(params[:q])
+    @q.sorts = "created_at desc" if @q.sorts.empty?
+    @users = policy_scope @q.result.includes(:instruments)
+    respond_to do |format|
+      format.json { render json: UserSerializer.new(@users).serializable_hash[:data].map { |user| user[:attributes] } }
     end
   end
 
-  # PUT /users/{username}
-  def update
-    return if @user.update(user_params)
-
-    render json: { errors: @user.errors.full_messages },
-           status: :unprocessable_entity
+  def show
+    authorize @user = User.find(params[:id])
+    render json: { user: UserSerializer.new(@user).serializable_hash[:data][:attributes] }, status: :ok
   end
 
-  # DELETE /users/{username}
-  def destroy
-    @user.destroy
+  def update
+    authorize @user = User.find(params[:id])
+    if @user.update(user_params)
+      render json: { user: UserSerializer.new(@user).serializable_hash[:data][:attributes] }, status: :ok
+    else
+      render json: { errors: @user.errors }, status: :unprocessable_entity
+    end
   end
 
   private
@@ -43,10 +32,8 @@ class Api::V1::UsersController < ApplicationController
       :name, :username, :email, :password, :password_confirmation
     )
   end
-end
 
-# change api spacing
-# remove instance variables
-# use rescue
-# find_bt(email: params[:email])
-# params.require(authentication).permit(:email, :password)
+  def set_user
+    @user = User.find(params[:id])
+  end
+end
