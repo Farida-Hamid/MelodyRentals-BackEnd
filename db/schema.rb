@@ -20,7 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_25_142824) do
     t.string "image"
     t.string "category"
     t.integer "price"
-    t.integer "quantity"
+    t.boolean "availble", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
