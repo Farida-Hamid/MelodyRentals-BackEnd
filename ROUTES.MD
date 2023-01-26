@@ -3,40 +3,40 @@
 ## user auth
 
 # signup
- A user object is posted to the sign up
+ A user object is posted to the sign up with POST
 
  **route**
  localhost:3000/api/v1/auth/signup
 
  ``
- {
-   "user": {
-     "username": "tm",
-     "name": "tm",
-     "email": "tm@localhost",
-     "password": "12345678",
-     "password_confirmation": "12345678"
-   }
- }
+{
+  "user": {
+    "username": "tm",
+    "name": "Matongo",
+    "email": "tm@easypay.com",
+    "password": "12345678",
+    "password_confirmation": "12345678"
+  }
+}
  ``
 
 # login
- A user login details are posted to the login
+ A user login details are posted to the login with POST
 
  **route**
  localhost:3000/api/v1/auth/login
 
  ``
- {
-   "user": {
-     "email": "tm@localhost",
-     "password": "12345678",
-   }
- }
+{
+	"user": {
+		"email": "tm@easypay.com",
+		"password": "12345678"
+	}
+}
  ``
 
 # get all users
- A logged in user can access the users
+ A logged in user can access the users with GET action
 
  **route**
  localhost:3000/api/v1/users
@@ -46,7 +46,7 @@ Use the authorization token, if youre signed in, all users will show
  ``
 
 # logout
- A user can signout
+ A user can signout with DELETE ACTION
 
  **route**
  localhost:3000/api/v1/auth/logout
@@ -59,14 +59,14 @@ Use the authorization token, if youre signed in, all users will show
 
 
 # get instruments
- Any user will be able to see the instruments
+ Any user will be able to see the instruments with GET action
 
  **route**
  localhost:3000/api/v1/instruments
 
 
 # get specific instrument
- A user can get specific instrument details
+ A user can get specific instrument details with GET action
 
  **route**
  localhost:3000/api/v1/instruments/1
@@ -87,7 +87,7 @@ Use the authorization token, if youre signed in, all users will show
  ``
 
 # create reservation
- A user can make their reservations. they will fill in a form and a body will be returned
+ A user can make their reservations with POST. they will fill in a form and a body will be returned
 
  **route**
  localhost:3000/api/v1/user/reservations/new
@@ -107,7 +107,7 @@ Use the authorization token, if youre signed in, all users will show
  frontent can make the logic for daily payments
 
 # see all reservations
- A user can make their reservations. they will fill in a form and a body will be returned
+ A user can see their reservations with GET action
 
  **route**
  localhost:3000/api/v1/user/reservations
@@ -124,7 +124,7 @@ Use the authorization token, if youre signed in, all users will show
  }
  ``
 # destroy a reservation
- A user can make their reservations. they will fill in a form and a body will be returned
+ A user can destroy their reservations with DELETE. they will fill in a form and a body will be returned
 
  **route**
  localhost:3000/api/v1/user/reservations/destroy
