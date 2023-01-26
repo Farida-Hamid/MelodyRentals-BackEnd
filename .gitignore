@@ -11,6 +11,8 @@ node_modules/
 
 .env
 
+env
+
 sumn.rb
 
 # Ignore all logfiles and tempfiles.
