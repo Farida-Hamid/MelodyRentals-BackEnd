@@ -1,14 +1,23 @@
 class User < ApplicationRecord
-  has_secure_password
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :jwt_authenticatable, jwt_revocation_strategy: JwtBlacklist
 
   validates :email, presence: true, uniqueness: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :username, presence: true, uniqueness: true
-  validates :name, presence: true, uniqueness: true
-  validates :password,
-            length: { minimum: 6 },
-            if: -> { new_record? || !password.nil? }
+  validates :name, presence: true
 
-  has_many :instruments, through: :reservations, dependent: :destroy
+  has_many :instruments, dependent: :destroy, foreign_key: :user_id
+
+  def admin?
+    role == 'admin'
+  end
+
+  def regular?
+    role == 'regular'
+  end
+
   has_many :reservations, dependent: :destroy
 end

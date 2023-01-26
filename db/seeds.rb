@@ -4,6 +4,40 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+
+#   Character.create(name: "Luke", movie: movies.first)
+User.create!(
+  name: "Admin",
+  username: "admin",
+  email: "admin@localhost",
+  password: "password",
+  password_confirmation: "password",
+  role: "admin",
+)
+
+3.times do |n|
+  Instrument.create!(
+    name: Faker::Music.instrument,
+    description: Faker::Lorem.paragraph,
+    image: Faker::LoremFlickr.image(size: "300x300", search_terms: ["music"]),
+    price: Faker::Commerce.price(range: 10..100),
+    quantity: Faker::Number.between(from: 1, to: 100),
+    category: "guitar",
+    user_id: 1,
+  )
+end
+
+3.times do |n|
+  User.create!(
+    name: Faker::Name.name,
+    username: Faker::Internet.username,
+    email: Faker::Internet.email,
+    password: "password",
+    password_confirmation: "password",
+    role: "regular",
+  )
+end
+
 #   Character.create(name: "Luke", movie: movi
 # user = User.create!(name: "selamawit", username: "selam", email: " sela@example.com", password: "123456", role: "admin")
 user  = User.create!(name: "Meshu", username: "Meshu", email: "meshu@gmail.com", password: "123456", role: "admin")
