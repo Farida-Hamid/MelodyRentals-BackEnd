@@ -12,7 +12,7 @@
 {
   "user": {
     "username": "tm",
-    "name": "Matongo",
+    "name": "MT",
     "email": "tm@easypay.com",
     "password": "12345678",
     "password_confirmation": "12345678"
