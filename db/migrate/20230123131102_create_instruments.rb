@@ -6,7 +6,7 @@ class CreateInstruments < ActiveRecord::Migration[7.0]
       t.string :image
       t.string :category
       t.integer :price
-      t.boolean :availble, default: true
+      t.boolean :available, default: true
       
 
       t.timestamps
