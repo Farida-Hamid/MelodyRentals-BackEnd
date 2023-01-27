@@ -4,7 +4,7 @@ class InstrumentPolicy < ApplicationPolicy
       if user.admin?
         scope.all
       elsif user.regular?
-        scope.where(user:)
+        scope.where(user_id: user.id)
       else
         scope.none
       end

@@ -66,7 +66,7 @@ class Api::V1::InstrumentsController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def instrument_params
     params.require(:instrument).permit(
-      :name, :description, :image, :price, :quantity, :category, :user_id
+      :name, :description, :image, :price, :available, :category, :user_id
     )
   end
 end
