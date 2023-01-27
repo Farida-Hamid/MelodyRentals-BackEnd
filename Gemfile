@@ -6,6 +6,7 @@ ruby '3.0.1'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
 
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 
@@ -65,6 +66,8 @@ gem 'bootsnap', require: false
 # gem "rack-cors"
 
 group :development, :test do
+
+ gem 'rspec-rails', ">= 3.9.0"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
