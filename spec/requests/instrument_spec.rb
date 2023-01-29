@@ -3,11 +3,9 @@ require 'rails_helper'
 RSpec.describe 'Instruments', type: :request do
   before(:each) do
     @user = FactoryBot.create(:user, name: 'testing', username: 'testing', email: 'testing@mail.com', password: 'password', password_confirmation: 'password',
-    role: 'admin')
+                                     role: 'admin')
     @instrument = FactoryBot.create(:instrument, name: 'trombone', category: 'percussion', image: 'image.png', user_id: @user.id,
                                                  price: 100, description: 'a trombone')
-
-  
   end
 
   describe 'GET /instruments' do
@@ -35,7 +33,7 @@ RSpec.describe 'Instruments', type: :request do
 
   describe 'DELETE /instruments/:id' do
     user = FactoryBot.create(:user, name: 'user7', username: 'user7', email: 'user7@mail.com', password: 'password', password_confirmation: 'password',
-    role: 'regular')
+                                    role: 'regular')
     instrument = FactoryBot.create(:instrument, name: 'piano', category: 'keys', image: 'image.png',
                                                 user_id: user.id, price: 100, available: true, description: 'a piano')
     it 'only allows admin to delete an instrument' do
