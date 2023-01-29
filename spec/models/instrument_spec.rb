@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Instrument, type: :model do
   before(:each) do
-    @user = User.create!(name: 'Test User', username: 'testuser', email: 'testuser@localhost', password: 'password',
+    @user = User.create!(name: 'person', username: 'person', email: 'person@localhost', password: 'password',
                          password_confirmation: 'password', role: 'admin')
     @instrument = Instrument.create!(name: 'Test Instrument', description: 'Test Description', image: 'Test Image',
                                      category: 'Test Category', price: 100, user_id: @user.id, available: true)

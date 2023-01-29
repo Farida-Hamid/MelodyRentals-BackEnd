@@ -9,7 +9,7 @@ class UserSerializer
         name: instrument.name,
         description: instrument.description,
         price: instrument.price,
-        quantity: instrument.quantity,
+        available: instrument.avaiilable,
         category: instrument.category,
         image: instrument.image
       }
