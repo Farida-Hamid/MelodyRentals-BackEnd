@@ -24,7 +24,7 @@ module Api
 
       def destroy
         @reservation = Reservation.find(params[:id])
-        if reservation.destroy
+        if @reservation.destroy
           render json: { status: 200, message: 'Reservation cancelled successfully' }, status: :ok
         else
           render json: { error: 'Error cancelling reservation' }, status: :unprocessable_entity
