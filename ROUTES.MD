@@ -42,7 +42,7 @@
  localhost:3000/api/v1/users
 
  ``
-Use the authorization token, if youre signed in, all users will show
+Use the authorization token(Auth2.0), if youre signed in, all users will show
  ``
 
 # logout
@@ -53,9 +53,6 @@ Use the authorization token, if youre signed in, all users will show
 
  you will get a message, successfully logged out
 
- ``
-
- ``
 
 
 # get instruments
@@ -64,6 +61,40 @@ Use the authorization token, if youre signed in, all users will show
  **route**
  localhost:3000/api/v1/instruments
 
+# create instruments
+
+ ``
+ {
+  "instrument" {
+    "name": "drum",
+    "description": "Lorem.paragraph",
+    "image": "drum image",
+    "category": "guitar",
+    "price": 100,
+    "available": true,
+    "user_id": 3
+    }
+}
+
+ ``
+
+**response body**
+
+ ``
+{
+    "id": 2,
+    "name": "drum",
+    "description": "Lorem.paragraph",
+    "image": "drum image",
+    "category": "guitar",
+    "price": 100,
+    "available": true,
+    "created_at": "2023-01-30T09:56:07.350Z",
+    "updated_at": "2023-01-30T09:56:07.350Z",
+    "user_id": 3
+}
+ ``
+
 
 # get specific instrument
  A user can get specific instrument details with GET action
@@ -71,31 +102,37 @@ Use the authorization token, if youre signed in, all users will show
  **route**
  localhost:3000/api/v1/instruments/1
 
+ **response body**
  ``
 {
-    id: 1,
-    name: "Guitar",
-    description: "A guitar",
-    image: "https://www.google.com",
-    category: "String",
-    price: 100,
-    quantity: 10,
-    created_at: Tue, 24 Jan 2023 08:43:31.023309000 UTC +00:00,
-    updated_at: Tue, 24 Jan 2023 08:43:31.023309000 UTC +00:00,
-    user_id: 1>
+    "id": 2,
+    "name": "drum",
+    "description": "Lorem.paragraph",
+    "image": "drum image",
+    "category": "guitar",
+    "price": 100,
+    "available": true,
+    "created_at": "2023-01-30T09:56:07.350Z",
+    "updated_at": "2023-01-30T09:56:07.350Z",
+    "user_id": 3
 }
  ``
+
+ # delete instruments
+
+  **route**
+ localhost:3000/api/v1/instruments/id
+
 
 # create reservation
  A user can make their reservations with POST. they will fill in a form and a body will be returned
 
  **route**
- localhost:3000/api/v1/user/reservations/new
-
+ localhost:3000/api/v1/user/reservations
+ **response body**
  ``
  {
    "reservation": {
-     "id": "1",
      "user_id": "1",
      "instrument_id": "1",
      "pickup_date": "2023-02-01",
@@ -103,6 +140,7 @@ Use the authorization token, if youre signed in, all users will show
    }
  }
  ``
+ 
 
  frontent can make the logic for daily payments
 
@@ -111,32 +149,31 @@ Use the authorization token, if youre signed in, all users will show
 
  **route**
  localhost:3000/api/v1/user/reservations
-
+ **response body**
  ``
+ [
  {
-   "reservation": {
-     "id": "1",
-     "user_id": "1",
-     "instrument_id": "1",
-     "pickup_date": "2023-02-01",
-     "return_date": "2023-02-10"
-   }
- }
+    "reservation": {
+      "id": "1",
+      "user_id": "1",
+      "instrument_id": "1",
+      "pickup_date": "2023-02-01",
+      "return_date": "2023-02-10"
+      "created_at": "2023-01-30T09:56:07.350Z",
+      "updated_at": "2023-01-30T09:56:07.350Z",
+    }
+  }
+ ]
  ``
 # destroy a reservation
  A user can destroy their reservations with DELETE. they will fill in a form and a body will be returned
 
  **route**
- localhost:3000/api/v1/user/reservations/destroy
-
- ``
- {
-   "reservation": {
-     "id": "1",
-     "user_id": "tm",
-     "instrument_id": "tm@localhost",
-     "pickup_date": "2023-02-01",
-     "return_date": "2023-02-10"
-   }
- }
- ``
+ localhost:3000/api/v1/user/reservations/id
+**response body**
+``
+{
+    "status": 200,
+    "message": "Reservation cancelled successfully"
+}
+``
