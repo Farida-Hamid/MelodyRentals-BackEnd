@@ -1,7 +1,8 @@
 module Api
   module V1
     class ReservationsController < ApplicationController
-      before_action :authorize_request
+      # before_action :authorize_request
+      # before_action :authenticate_user!
       def index
         render json: @current_user.reservations.includes([:instrument]).order(id: :desc), status: :ok
       end
@@ -33,7 +34,7 @@ module Api
       private
 
       def reservation_params
-        params.permit(:instrument_id, :pickup_date, :return_date)
+        params.permit(:instrument_id, :pickup_date, :return_date, :user_id)
       end
     end
   end
