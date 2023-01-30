@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.describe Reservation, type: :model do
   before(:each) do
     @user = User.create!(name: 'Test1 User', username: 'test1user', email: 'user1@example.com', password: 'password',
