@@ -40,5 +40,11 @@ end
 
 #   Character.create(name: "Luke", movie: movi
 # user = User.create!(name: "selamawit", username: "selam", email: " sela@example.com", password: "123456", role: "admin")
-user  = User.create!(name: "Meshu", username: "Meshu", email: "meshu@gmail.com", password: "123456", role: "admin")
+user  = User.create!(name: "Meshu", username: "Meshu", email: "meshu@gmail.com", password: "123456", password_confirmation: "123456", role: "admin")
 instrument = Instrument.create!(name: "guitar", description: "guitargxdytgxfrydh", image: "guitaruetsgdrfhcvgjbzwryxetc", category: "guitarszgxdctfv", price: 100, user_id: user.id, available: true)
+
+
+# user = User.create!(name: "selamawit", username: "selam", email: "selam@example", password: "123456", role: "admin")
+# instrument = Instrument.create!(name: "guitar", description: "guitargxdytgxfrydh", image: "guitaruetsgdrfhcvgjbzwryxetc", category: "guitarszgxdctfv", price: 100, user_id: user.id, available: true)
+# reservation = Reservation.create!(instrument_id: instrument.id, user_id: user.id, pickup_date: "2023-05-01", return_date: "2023-05-05")
+

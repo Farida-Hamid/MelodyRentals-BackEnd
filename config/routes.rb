@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:index, :show, :update, :search], controller: "users/users"
       resources :instruments
-      resources :reservations, only: [:index, :create, :destroy]
+      resources :reservations
     end
   end
 end

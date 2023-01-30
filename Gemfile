@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.1'
+ruby '3.1.3'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
@@ -16,7 +16,7 @@ gem 'jsonapi-serializer', '~> 2.2'
 gem 'pundit', '~> 2.3'
 
 # Use Json Web Token (JWT) for token based authentication
-gem 'jwt'
+# gem 'jwt'
 
 gem 'faker', '~> 3.1'
 
@@ -65,9 +65,15 @@ gem 'bootsnap', require: false
 # gem "rack-cors"
 
 group :development, :test do
+  gem 'rspec-rails', '>= 3.9.0'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'capybara'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
+end
+
+group :test do
+  gem 'database_cleaner'
 end
 
 group :development do

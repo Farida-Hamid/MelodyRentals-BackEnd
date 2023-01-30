@@ -31,8 +31,9 @@ development:
   encoding: unicode
   username: postgres
   password: postgres
-  # username: ENV['DB_USERNAME']
-  # password: ENV['MELODY_RENTALS_DB_PASSWORD']
+  # password: psql888tm
+  # username: <% ENV['DB_USERNAME'] %>
+  # password: <% ENV['MELODY_RENTALS_DB_PASSWORD'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -73,8 +74,7 @@ test:
   encoding: unicode
   username: postgres
   password: postgres
-  # username: ENV['DB_USERNAME']
-  # password: ENV['MELODY_RENTALS_DB_PASSWORD']
+  # password: psql888tm
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -99,5 +99,7 @@ test:
 production:
   <<: *default
   database: melody_rentals_production
-  username: melody_rentals
-  password: <%= ENV["MELODY_RENTALS_DATABASE_PASSWORD"] %>
+  # username: melody_rentals
+  # password: <%= ENV["MELODY_RENTALS_DATABASE_PASSWORD"] %>
+  username: postgres
+  password: postgres
