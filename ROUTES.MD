@@ -177,3 +177,5 @@ Use the authorization token(Auth2.0), if youre signed in, all users will show
     "message": "Reservation cancelled successfully"
 }
 ``
+
+api docs at Melody-Rentals/swagger/v1/swagger.yaml
