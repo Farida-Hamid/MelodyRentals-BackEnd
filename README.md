@@ -111,9 +111,9 @@ After you're finished please remove all the comments and instructions!
 <!-- Kanban Board -->
 ## <img src="https://cdn-icons-png.flaticon.com/512/5360/5360804.png" width="23" height="20"/> Kanban Board <a name="kanban-board"></a>
 
-- We are a **group of 4 people**, so we used 2 Kanban Board to divide the work and keep track of the progress.
+- We are a **group of 5 people**, So we have devided each task for track of the project.
 ###  Kanban Board
- - [Frontend Kanban Board ](https://github.com/users/Farida-Hamid/projects/11)
+ - [Kanban Board ](https://github.com/users/Farida-Hamid/projects/11)
 
 
 
