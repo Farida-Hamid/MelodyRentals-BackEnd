@@ -112,13 +112,9 @@ After you're finished please remove all the comments and instructions!
 ## <img src="https://cdn-icons-png.flaticon.com/512/5360/5360804.png" width="23" height="20"/> Kanban Board <a name="kanban-board"></a>
 
 - We are a **group of 4 people**, so we used 2 Kanban Board to divide the work and keep track of the progress.
-### Frontend Kanban Board
- - [Frontend Kanban Board p-1](https://github.com/users/Farida-Hamid/projects/11)
+###  Kanban Board
+ - [Frontend Kanban Board ](https://github.com/users/Farida-Hamid/projects/11)
 
-
-### Backend Kanban Board
-
-  - [Backend Kanban Board p](https://github.com/users/Farida-Hamid/projects/11)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -138,11 +134,11 @@ After you're finished please remove all the comments and instructions!
 
 <!-- React Frontend -->
 ## <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/539px-React-icon.svg.png" width="23" height="20"/> React Frontend <a name="react-frontend"></a>
-- Here is the Frontend part of the project [El Dorado Frontend](https://github.com/michael-duke/ElDorado-Frontend)
+- The Frontend part of the project [Melody Rentals Frontend](https://github.com/Farida-Hamid/MelodyRentals-FrontEnd)
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo :rocket:](https://eldorado-rentals.netlify.app/) :smiley:
+- [Live Demo :rocket:]() :smiley:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
