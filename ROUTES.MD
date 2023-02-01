@@ -65,7 +65,7 @@ Use the authorization token(Auth2.0), if youre signed in, all users will show
 
  ``
  {
-  "instrument" {
+  "instrument": {
     "name": "drum",
     "description": "Lorem.paragraph",
     "image": "drum image",

@@ -9,7 +9,7 @@
 User.create!(
   name: "Admin",
   username: "admin",
-  email: "admin@localhost",
+  email: "admin@localhost.com",
   password: "password",
   password_confirmation: "password",
   role: "admin",
