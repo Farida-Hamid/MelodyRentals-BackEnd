@@ -138,7 +138,8 @@ After you're finished please remove all the comments and instructions!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo :rocket:]() :smiley:
+# for the API
+- [Live Demo :rocket:](https://melody-rentals.onrender.com/api/v1) :smiley:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
