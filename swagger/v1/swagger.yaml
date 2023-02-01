@@ -1,0 +1,146 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/instruments":
+    get:
+      summary: list instruments
+      tags:
+      - Instruments
+      security:
+      - bearer_auth: []
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create instrument
+      security:
+      - bearer_auth: []
+      tags:
+      - Instruments
+      parameters: []
+      responses:
+        '201':
+          description: instrument created
+        '200':
+          description: successful
+        '422':
+          description: invalid request
+        '401':
+          description: authentication failed
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                category:
+                  type: string
+                price:
+                  type: integer
+                image:
+                  type: string
+                description:
+                  type: string
+                user_id:
+                  type: integer
+              required:
+              - name
+              - category
+              - price
+              - image
+              - description
+              - user_id
+  "/api/v1/instruments/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show instrument
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete instrument
+      responses:
+        '200':
+          description: successful
+        '201':
+          description: Authorized
+        '401':
+          description: authentication failed
+  "/api/v1/reservations":
+    get:
+      summary: list reservations
+      tags:
+      - Reservations
+      security:
+      - bearer_auth: []
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create reservation
+      tags:
+      - Reservations
+      security:
+      - bearer_auth: []
+      parameters: []
+      responses:
+        '201':
+          description: Authorized
+        '422':
+          description: invalid request
+        '200':
+          description: successful
+        '401':
+          description: authentication failed
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pickup_date:
+                  type: date
+                return_date:
+                  type: date
+                instrument_id:
+                  type: integer
+                user_id:
+                  type: integer
+              required:
+              - pickup_date
+              - return_date
+              - instrument_id
+              - user_id
+  "/api/v1/reservations/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    delete:
+      summary: delete reservation
+      responses:
+        '200':
+          description: successful
+        '201':
+          description: Authorized
+        '404':
+          description: not found
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

@@ -98,8 +98,7 @@ test:
 #
 production:
   <<: *default
-  database: melody_rentals_production
-  # username: melody_rentals
-  # password: <%= ENV["MELODY_RENTALS_DATABASE_PASSWORD"] %>
-  username: postgres
-  password: postgres
+  database: melody_rentals
+  username: melody_rentals
+  password: <%= ENV["MELODYRENTALS_DB_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

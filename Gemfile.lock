@@ -131,7 +131,12 @@ GEM
     io-console (0.6.0)
     irb (1.6.2)
       reline (>= 0.3.0)
+    jbuilder (2.11.5)
+      actionview (>= 5.0.0)
+      activesupport (>= 5.0.0)
     json (2.6.3)
+    json-schema (3.0.0)
+      addressable (>= 2.8)
     jsonapi-serializer (2.2.0)
       activesupport (>= 4.2)
     jwt (2.6.0)
@@ -239,6 +244,16 @@ GEM
       rspec-mocks (~> 3.11)
       rspec-support (~> 3.11)
     rspec-support (3.12.0)
+    rswag-api (2.8.0)
+      railties (>= 3.1, < 7.1)
+    rswag-specs (2.8.0)
+      activesupport (>= 3.1, < 7.1)
+      json-schema (>= 2.2, < 4.0)
+      railties (>= 3.1, < 7.1)
+      rspec-core (>= 2.14)
+    rswag-ui (2.8.0)
+      actionpack (>= 3.1, < 7.1)
+      railties (>= 3.1, < 7.1)
     rubocop (1.43.0)
       json (~> 2.3)
       parallel (~> 1.10)
@@ -288,6 +303,7 @@ DEPENDENCIES
   factory_bot_rails
   faker (~> 3.1)
   figaro
+  jbuilder
   jsonapi-serializer (~> 2.2)
   pg (~> 1.1)
   puma (~> 5.0)
@@ -296,6 +312,9 @@ DEPENDENCIES
   rails (~> 7.0.4)
   ransack (~> 3.2)
   rspec-rails (>= 3.9.0)
+  rswag-api
+  rswag-specs
+  rswag-ui
   rubocop (>= 1.0, < 2.0)
   tzinfo-data
 
