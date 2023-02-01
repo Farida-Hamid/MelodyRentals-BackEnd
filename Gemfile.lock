@@ -131,6 +131,9 @@ GEM
     io-console (0.6.0)
     irb (1.6.2)
       reline (>= 0.3.0)
+    jbuilder (2.11.5)
+      actionview (>= 5.0.0)
+      activesupport (>= 5.0.0)
     json (2.6.3)
     json-schema (3.0.0)
       addressable (>= 2.8)
@@ -264,6 +267,13 @@ GEM
     rubocop-ast (1.24.1)
       parser (>= 3.1.1.0)
     ruby-progressbar (1.11.0)
+    sprockets (4.2.0)
+      concurrent-ruby (~> 1.0)
+      rack (>= 2.2.4, < 4)
+    sprockets-rails (3.4.2)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
+      sprockets (>= 3.0.0)
     thor (1.2.1)
     timeout (0.3.1)
     tzinfo (2.0.5)
@@ -300,6 +310,7 @@ DEPENDENCIES
   factory_bot_rails
   faker (~> 3.1)
   figaro
+  jbuilder
   jsonapi-serializer (~> 2.2)
   pg (~> 1.1)
   puma (~> 5.0)
@@ -312,6 +323,7 @@ DEPENDENCIES
   rswag-specs
   rswag-ui
   rubocop (>= 1.0, < 2.0)
+  sprockets-rails
   tzinfo-data
 
 RUBY VERSION
