@@ -13,6 +13,8 @@ node_modules/
 
 env
 
+render/
+
 sumn.rb
 
 # Ignore all logfiles and tempfiles.

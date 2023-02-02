@@ -99,6 +99,3 @@ test:
 production:
   <<: *default
   database: melody_rentals
-  username: melody_rentals
-  password: <%= ENV["MELODYRENTALS_DB_PASSWORD"] %>
-  url: <%= ENV['DATABASE_URL'] %>
