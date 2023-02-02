@@ -20,6 +20,27 @@
 }
  ``
 
+ # response body 
+ ``
+{
+    "status": {
+        "code": 200,
+        "message": "Registered successfully.",
+        "data": {
+            "user": {
+                "id": 5,
+                "name": "mel",
+                "username": "mel",
+                "email": "mel@mel.com",
+                "created_at": "2023-02-02T13:18:18.641Z",
+                "updated_at": "2023-02-02T13:18:18.641Z",
+                "instruments": []
+            }
+        }
+    }
+}
+ ``
+
 # login
  A user login details are posted to the login with POST
 
@@ -34,6 +55,23 @@
 	}
 }
  ``
+
+ # response body
+ ``
+{
+    "status": 200,
+    "message": "Logged in sucessfully.",
+    "data": {
+        "id": 5,
+        "name": "mel",
+        "username": "mel",
+        "email": "mel@mel.com",
+        "created_at": "2023-02-02T13:18:18.641Z",
+        "updated_at": "2023-02-02T13:18:18.641Z",
+        "instruments": []
+    }
+}
+``
 
 # get all users
  A logged in user can access the users with GET action

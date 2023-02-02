@@ -3,8 +3,8 @@ class Api::V1::Users::RegistrationsController < Devise::RegistrationsController
 
   private
 
-  def respond_with(current_user, _opts = {})
-    register_success && return if current_user.persisted?
+  def respond_with(resource, _opts = {})
+    register_success && return if resource.persisted?
 
     register_failure
   end
@@ -12,8 +12,8 @@ class Api::V1::Users::RegistrationsController < Devise::RegistrationsController
   def register_success
     render json: {
       status: {
-        code: 200, message: 'Registered successfully.'
-        # data: { user: UserSerializer.new(current_user).serializable_hash[:data][:attributes] },
+        code: 200, message: 'Registered successfully.',
+         data: { user: UserSerializer.new(current_user).serializable_hash[:data][:attributes] },
       }
     }, status: :ok
   end
