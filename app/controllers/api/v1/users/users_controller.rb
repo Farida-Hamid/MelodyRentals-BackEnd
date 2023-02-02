@@ -2,23 +2,9 @@ class Api::V1::Users::UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: %i[show update]
 
-  # def index
-  #   @q = User.ransack(params[:q])
-  #   @q.sorts = 'created_at desc' if @q.sorts.empty?
-  #   @users = policy_scope @q.result.includes(:instruments)
-  #   respond_to do |format|
-  #     format.json { render json: UserSerializer.new(@users).serializable_hash[:data].map { |user| user[:attributes] } }
-  #   end
-  # end
-
   def index
     render json: current_user, status: :ok
   end
-
-  # def show
-  #   authorize @user = User.find(params[:id])
-  #   render json: { user: UserSerializer.new(@user).serializable_hash[:data][:attributes] }, status: :ok
-  # end
 
   def show
     render json: current_user, status: :ok
@@ -36,7 +22,7 @@ class Api::V1::Users::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user)permit(
+    params.require(:user).permit(
       :name, :username, :email, :password, :password_confirmation
     )
   end

@@ -13,7 +13,7 @@ class Api::V1::Users::RegistrationsController < Devise::RegistrationsController
     render json: {
       status: {
         code: 200, message: 'Registered successfully.',
-         data: { user: UserSerializer.new(current_user).serializable_hash[:data][:attributes] },
+        data: { user: UserSerializer.new(current_user).serializable_hash[:data][:attributes] }
       }
     }, status: :ok
   end
