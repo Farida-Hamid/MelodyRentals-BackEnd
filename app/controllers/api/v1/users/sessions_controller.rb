@@ -7,7 +7,7 @@ class Api::V1::Users::SessionsController < Devise::SessionsController
     if current_user.persisted?
       render json: {
         status: {
-          code: :ok, message: 'Logged in successfully.'
+          code: :ok, username: current_user.username, role: current_user. role #message: 'Logged in successfully.'
         }
       }, status: :ok
     else

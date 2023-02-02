@@ -26,11 +26,9 @@ development:
   <<: *default
   database: melody_rentals_development
   host: localhost
-  port: 5432
-  adapter: postgresql
-  encoding: unicode
   username: postgres
-  password: postgres
+  password: BUDGETAPP_DATABASE_PASSWORD
+
   # password: psql888tm
   # username: <% ENV['DB_USERNAME'] %>
   # password: <% ENV['MELODY_RENTALS_DB_PASSWORD'] %>

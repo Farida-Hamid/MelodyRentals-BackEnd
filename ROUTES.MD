@@ -62,16 +62,17 @@ Use the authorization token(Auth2.0), if youre signed in, all users will show
  localhost:3000/api/v1/instruments
 
 # create instruments
+Post to localhost:3000/api/v1/instruments
+body:
 
  ``
  {
   "instrument": {
-    "name": "drum",
-    "description": "Lorem.paragraph",
-    "image": "drum image",
-    "category": "guitar",
+    "name": "Oud",
+    "description": "Middle eastern guitar",
+    "image": "https://m.media-amazon.com/images/I/51RAx4ZiyVL._AC_SY879_.jpg",
+    "category": "string",
     "price": 100,
-    "available": true,
     "user_id": 3
     }
 }
@@ -82,15 +83,15 @@ Use the authorization token(Auth2.0), if youre signed in, all users will show
 
  ``
 {
-    "id": 2,
-    "name": "drum",
-    "description": "Lorem.paragraph",
-    "image": "drum image",
-    "category": "guitar",
+    "id": 8,
+    "name": "Oud",
+    "description": "Middle eastern guitar",
+    "image": "https://m.media-amazon.com/images/I/51RAx4ZiyVL._AC_SY879_.jpg",
+    "category": "string",
     "price": 100,
     "available": true,
-    "created_at": "2023-01-30T09:56:07.350Z",
-    "updated_at": "2023-01-30T09:56:07.350Z",
+    "created_at": "2023-02-01T14:17:18.913Z",
+    "updated_at": "2023-02-01T14:17:18.913Z",
     "user_id": 3
 }
  ``
