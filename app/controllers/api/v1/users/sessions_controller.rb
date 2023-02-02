@@ -3,17 +3,19 @@ class Api::V1::Users::SessionsController < Devise::SessionsController
 
   private
 
-  def respond_with(current_user, _opts = {})
+  def respond_with(_resource, _opts = {})
     if current_user.persisted?
       render json: {
-        status: {
-          code: :ok, username: current_user.username, role: current_user. role #message: 'Logged in successfully.'
-        }
+        status: 200,
+        message: 'Logged in sucessfully.',
+        data: UserSerializer.new(current_user)
       }, status: :ok
     else
       render json: {
-        status: { message: "Couldn't log in." }
-      }, status: :unprocessable_entity
+        status: 401,
+        message: "Logged in failure. #{resource.errors.full_messages.to_sentence}",
+        data: UserSerializer.new(current_user)
+      }, status: :unauthorized
     end
   end
 
