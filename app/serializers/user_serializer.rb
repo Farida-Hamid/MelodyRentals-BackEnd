@@ -1,6 +1,7 @@
 class UserSerializer
   include JSONAPI::Serializer
-  attributes :id, :name, :username, :email, :created_at, :updated_at, role
+
+  attributes :id, :name, :username, :email, :role, :created_at, :updated_at
 
   attributes :instruments do |object|
     object.instruments.map do |instrument|
