@@ -73,6 +73,7 @@ group :development, :test do
   gem 'capybara'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
+  gem 'dotenv-rails'
   gem 'rswag-specs'
 end
 

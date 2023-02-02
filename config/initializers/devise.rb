@@ -8,10 +8,11 @@
 #
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
+# Rails.application.credentials.dig(:devise, :jwt_secret_key)
 Devise.setup do |config|
   config.jwt do |jwt|
     # get the secret key from the environment variable in the .env file
-    jwt.secret = ENV["DEVISE_JWT_SECRET_KEY"].presence || Rails.application.credentials.dig(:devise, :jwt_secret_key)
+    jwt.secret = ENV["DEVISE_JWT_SECRET_KEY"].presence || Rails.application.credentials.fetch(:devise_jwt_secret_key)
     jwt.dispatch_requests = [
       ["POST", %r{^/api/v1/auth/login$}],
     ]
