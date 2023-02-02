@@ -13,7 +13,7 @@
 Devise.setup do |config|
   config.jwt do |jwt|
     # get the secret key from the environment variable in the .env file
-    secret_key = ad135247de487a50080b62aff27992448d4d3e67a96f125c4856492bbcd84fbbd5bca17105f86976fbf3e7ac47de8e272b78838a8d0d07a78e18b81765d3db3e
+    secret_key = 'ad135247de487a50080b62aff27992448d4d3e67a96f125c4856492bbcd84fbbd5bca17105f86976fbf3e7ac47de8e272b78838a8d0d07a78e18b81765d3db3e'
     jwt.secret = secret_key
     jwt.dispatch_requests = [
       ["POST", %r{^/api/v1/auth/login$}],

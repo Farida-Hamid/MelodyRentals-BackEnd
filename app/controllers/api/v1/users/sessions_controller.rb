@@ -8,7 +8,7 @@ class Api::V1::Users::SessionsController < Devise::SessionsController
   end
 
   def respond_to_on_destroy
-    secret_key = ad135247de487a50080b62aff27992448d4d3e67a96f125c4856492bbcd84fbbd5bca17105f86976fbf3e7ac47de8e272b78838a8d0d07a78e18b81765d3db3e
+    secret_key = 'ad135247de487a50080b62aff27992448d4d3e67a96f125c4856492bbcd84fbbd5bca17105f86976fbf3e7ac47de8e272b78838a8d0d07a78e18b81765d3db3e'
     if request.headers['Authorization'].present?
       jwt_payload = JWT.decode(request.headers['Authorization'].split.last, secret_key).first
       # ENV.fetch('DEVISE_JWT_SECRET_KEY')
