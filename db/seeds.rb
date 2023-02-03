@@ -15,6 +15,15 @@ User.create!(
   role: 'admin',
 )
 
+User.create!(
+  name: 'regular',
+  username: 'regular',
+  email: 'regular@melodyrentals.com',
+  password: '1234567',
+  password_confirmation: '1234567',
+  role: 'regular',
+)
+
 Instrument.create!(
   name: 'Kalimba',
   description: 'Kalimba originates from Africa as a kind of portable musical instrument. MiSoundofNature creates the high-end Kalimba via superior Black Walnut, Black Walnuts & Maple, Zambian RoseWood to chase the melodies around in the deep forest. It is made of full flat board, and the selected wood is more than 10 years old. All of them are printed with tree rings, and the sound will be more solid and rich.combining vocal music theory, natural and gorgeous texture, fine and uniform structure, and strong acoustic plasticity.

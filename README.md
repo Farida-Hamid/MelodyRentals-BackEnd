@@ -24,7 +24,7 @@ After you're finished please remove all the comments and instructions!
 
 <div align="center">
 
-  <img src="https://user-images.githubusercontent.com/101523582/215736352-0f3169dd-ff8c-41ce-838f-4505d04f8976.png" alt="logo" width="140"  height="auto" />
+  <img src="./IMG_4089.png" alt="logo" width="140"  height="auto" />
   <br/>
 
 </div>
@@ -62,7 +62,7 @@ After you're finished please remove all the comments and instructions!
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 MelodyRentals Backend <a name="about-project"></a>
-![Melody Rentals-logo](https://user-images.githubusercontent.com/101523582/215736352-0f3169dd-ff8c-41ce-838f-4505d04f8976.png)
+![Melody Rentals-logo](./IMG_4089.png)
 
 **Melody Rentals Backend** is a musicial  instruments rental application where the user can register new accounts, login and reserve a set of different instruments. It is built and connected by using two different repos, including Back-end(Rails) and Front-end(React/Redux).
 
@@ -291,3 +291,5 @@ I would like to thank:
 <!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
